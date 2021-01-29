@@ -1,0 +1,247 @@
+csr1kv1#
+csr1kv1#
+csr1kv1#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+csr1kv1(config)#
+csr1kv1(config)#res
+csr1kv1(config)#rest
+csr1kv1(config)#restconf 
+csr1kv1(config)#ip http ser
+csr1kv1(config)#ip http server 
+csr1kv1(config)#ip secu
+csr1kv1(config)#ip security h
+csr1kv1(config)#ip security ht
+csr1kv1(config)#ip security htt
+csr1kv1(config)#ip security http
+csr1kv1(config)#ip http se      
+csr1kv1(config)#ip http secu
+csr1kv1(config)#ip http secure-ser
+csr1kv1(config)#ip http secure-server 
+csr1kv1(config)#end
+csr1kv1#sh run
+Building configuration...
+
+Current configuration : 4458 bytes
+!
+! Last configuration change at 23:15:22 PST Thu Jan 28 2021 by cisco
+!
+version 16.9
+service timestamps debug datetime localtime show-timezone
+service timestamps log datetime localtime show-timezone
+service password-encryption
+platform qfp utilization monitor load 80
+no platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname csr1kv1
+!
+boot-start-marker
+boot-end-marker
+!
+!
+logging buffered 512000
+!
+aaa new-model
+!
+!
+aaa authentication login default local
+aaa authorization exec default local 
+!         
+!
+!
+!
+!
+aaa session-id common
+clock timezone PST -8 0
+clock summer-time PDT recurring
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+login on-success log
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+! 
+! 
+! 
+! 
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+crypto pki trustpoint TP-self-signed-2571508063
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-2571508063
+ revocation-check none
+ rsakeypair TP-self-signed-2571508063
+!
+!
+crypto pki certificate chain TP-self-signed-2571508063
+ certificate self-signed 01
+  30820330 30820218 A0030201 02020101 300D0609 2A864886 F70D0101 05050030 
+  31312F30 2D060355 04031326 494F532D 53656C66 2D536967 6E65642D 43657274 
+  69666963 6174652D 32353731 35303830 3633301E 170D3139 30393036 30333238 
+  32345A17 0D333030 31303130 30303030 305A3031 312F302D 06035504 03132649 
+  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D32 35373135 
+  30383036 33308201 22300D06 092A8648 86F70D01 01010500 0382010F 00308201 
+  0A028201 0100C921 366B0F70 B1FC2F02 440CF2E7 B7BD697D 361C339E 1F7E60C5 
+  6D3449DB BCF94359 F658F582 66F999C7 BD9174EF EFE8E30B 3795310C 929B3C31 
+  C798FBF8 FAB44AEB 750D8C93 75CBD0C3 C0F99823 3BE9CF15 F65D52F8 6C0823FF 
+  3F6DF1CF F556CD33 634F6606 00D212E4 B7365746 0B75F247 631015F0 D2DFFF59 
+  10A7666B 3A965ECC BD99E145 E615B4AB CD57E234 0DF05341 2155C2B1 429D390F 
+  C177780B 770C3736 B7A350D4 7B5A35AE C241BE3D 77772ACE 06DD594C DCA997C5 
+  A1A047C8 06B4A074 594F7730 84217B4E 3C128406 56A704E0 83F3B093 7103E1E1 
+  774D4FB6 96A26EF7 2F2B4C29 1137DC5A E66AF53F C1B820AC B9BD957F C85E2FD6 
+  1D9766DC 7BC90203 010001A3 53305130 0F060355 1D130101 FF040530 030101FF 
+  301F0603 551D2304 18301680 14DB3C71 635EB818 6DBCD6E4 E4422CCE B4844880 
+  BF301D06 03551D0E 04160414 DB3C7163 5EB8186D BCD6E4E4 422CCEB4 844880BF 
+  300D0609 2A864886 F70D0101 05050003 82010100 82726850 CA454BF5 F07C322E 
+  37E0DBE4 F31395C5 5C6122EE BA98EF34 E94D61DB 99E83E07 EE5E9877 8E232406 
+  F1010458 499C7724 F656F3EF 028A0E8D 670973D7 B0C353AA 42F455E2 39E4FB6B 
+  EC1452CD 488F605D E930004A B75D632D 038B62B2 A3350C44 3D81F1E1 252ABF7C 
+  825B311D D1320514 7176B038 9A98A83B A0B3839A C89642DA B7D3B356 B1119279 
+  81E4F0BD E804708F C0312CB8 228981CC E592EF57 D9227E8A F7788EF7 CECAA367 
+  89730B4D FECB40D1 EB15F6D9 A07B94AE D4949D27 AAF0B7F0 71F09FA2 3AB4DC4E 
+  182DB077 44AD3757 57AF2BDB 480EC35B 02BD58B9 D0ACF691 EBC6EA2B 2898D241 
+  8CA2B968 B9FE86D5 B8BCEA82 56642F14 AB9C8700
+  	quit
+!
+!
+!
+!
+!         
+!
+!
+!
+license udi pid CSR1000V sn 9LMI367WQVV
+license boot level ax
+no license smart enable
+diagnostic bootup level minimal
+!
+spanning-tree extend system-id
+!
+!
+restconf
+!
+username tis privilege 15 secret 5 $1$57zV$FNqMKb8x/mwxAHBvWelcv.
+username cisco privilege 15 secret 5 $1$rUTo$qRqZnmQnM8HAote0Yb4W2/
+!
+redundancy
+!
+!
+!
+!
+!
+!
+! 
+!
+!         
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+!
+!
+interface GigabitEthernet1
+ ip address 192.168.0.30 255.255.255.0
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+interface GigabitEthernet2
+ ip address 192.168.100.20 255.255.255.0
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!         
+interface GigabitEthernet3
+ no ip address
+ shutdown
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+interface GigabitEthernet4
+ no ip address
+ shutdown
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+interface GigabitEthernet5
+ ip address 10.0.0.20 255.255.255.0
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+ip forward-protocol nd
+ip http server
+ip http authentication local
+ip http secure-server
+ip route 0.0.0.0 0.0.0.0 GigabitEthernet1 192.168.0.1
+!         
+ip ssh version 2
+!
+logging history size 500
+logging history debugging
+!
+!
+!
+!
+!
+!
+control-plane
+!
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 120 0
+ privilege level 15
+ logging synchronous
+ stopbits 1
+line vty 0 4
+ exec-timeout 720 0
+ privilege level 15
+ logging synchronous
+ transport input ssh
+line vty 5 15
+ exec-timeout 720 0
+ privilege level 15
+ logging synchronous
+ transport input ssh
+!
+ntp master
+ntp server 172.18.70.1
+!
+!
+!
+!
+!
+end
+
